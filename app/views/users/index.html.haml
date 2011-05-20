@@ -8,21 +8,25 @@
     %th Email
     %th Role
     %th Phone number
-    %th 
-    %th 
-    %th 
+    - if member_signed_in? 
+      %th 
+      %th 
+      %th 
   - @users.each do |user| 
     %tr
       %td 
-        = user.first_name 
+        = user.first_name
       %td= user.last_name 
       %td= user.email 
       %td= user.role 
       %td= user.phone_number 
-      %td= link_to 'Show', user 
-      %td= link_to 'Edit', edit_user_path(user) 
-      %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete 
+      - if member_signed_in? and user.email == current_member.email
+        %td= link_to 'Show', user 
+        %td= link_to 'Edit', edit_user_path(user) 
+        %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete 
 
 %br
-= link_to 'New User', new_user_path 
+
+- if member_signed_in? 
+  = link_to 'New User', new_user_path 
 
