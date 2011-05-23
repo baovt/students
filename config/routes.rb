@@ -1,7 +1,8 @@
 Students::Application.routes.draw do
-  devise_for :members
-
-  resources :users
+  devise_for :users
+  scope "/student" do
+    resources :users
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

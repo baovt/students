@@ -8,7 +8,8 @@
     %th Email
     %th Role
     %th Phone number
-    - if member_signed_in? 
+    %th Last login time
+    - if user_signed_in? 
       %th 
       %th 
       %th 
@@ -20,13 +21,14 @@
       %td= user.email 
       %td= user.role 
       %td= user.phone_number 
-      - if member_signed_in? and user.email == current_member.email
+      %td= user.last_sign_in_at
+      - if user_signed_in? and user.email == current_user.email
         %td= link_to 'Show', user 
         %td= link_to 'Edit', edit_user_path(user) 
         %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete 
 
 %br
 
-- if member_signed_in? 
+- if user_signed_in? 
   = link_to 'New User', new_user_path 
 
