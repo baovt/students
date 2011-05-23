@@ -1,0 +1,32 @@
+<h1>Listing blogs</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th>Title</th>
+    <th>User</th>
+    <% if user_signed_in? %>
+      <th></th>
+      <th></th>
+      <th></th>
+    <% end %>
+  </tr>
+
+<% @blogs.each do |blog| %>
+  <tr>
+    <td><%= blog.content %></td>
+    <td><%= blog.title %></td>
+    <td><%= blog.user.email %></td>
+    <% if user_signed_in? %>
+      <td><%= link_to 'Show', blog %></td>
+      <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+      <td><%= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% if user_signed_in? %>
+<%= link_to 'New Blog', new_blog_path %>
+<% end %>

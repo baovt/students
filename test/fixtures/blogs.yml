@@ -3,9 +3,9 @@
 one:
   content: MyText
   title: MyString
-  member_id: 1
+  user_id: 1
 
 two:
   content: MyText
   title: MyString
-  member_id: 1
+  user_id: 1
