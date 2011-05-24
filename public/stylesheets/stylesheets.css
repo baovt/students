@@ -1,0 +1,15 @@
+#blog_list .list_line_even {
+  background:   #e0f8f8;
+}
+
+#blog_list .list_line_odd {
+  background:   #f8b0f8;
+}
+
+#user_list .list_line_even {
+  background:   #e0f8f8;
+}
+
+#user_list .list_line_odd {
+  background:   #f8b0f8;
+}
