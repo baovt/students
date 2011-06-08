@@ -14,7 +14,7 @@
 
 <% @blogs.each do |blog| %>
   <tr class="<%= cycle('list_line_even', 'list_line_odd') %>">
-    <td><%= blog.content %></td>
+    <td><%= raw blog.content %></td>
     <td><%= blog.title %></td>
     <td><%= blog.user.email %></td>
     <% if user_signed_in? %>

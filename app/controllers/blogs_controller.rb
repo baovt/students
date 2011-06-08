@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+  uses_tiny_mce
+
   # GET /blogs
   # GET /blogs.xml
   def index
