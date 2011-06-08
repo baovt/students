@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title,  :class => "text" %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br />
-    <%= f.text_field :user_id, :value => current_user.id, :readonly => true %>
+    <%= f.text_field :user_id,  :class => "text", :value => current_user.id, :readonly => true %>
   </div>
   <div class="actions">
     <%= f.submit %>
