@@ -22,11 +22,9 @@
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 2px solid;
-  font: small-caps 40px/40px "Times New Roman", serif;
+  font: small-caps 10px/10px "Times New Roman", serif;
   color: #282;
   text-align: left;
-  margin-left: 5.5em;
-  margin-right: 5.5em;
 }
 
 #main {
@@ -50,4 +48,7 @@
   padding-right: 1em;
   width: 16em;
   background: #F7F7F7;
+}
+div.content {
+  background: #F3F4EE;
 }
