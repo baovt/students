@@ -1,3 +1,4 @@
+<div class="span-17 colborder">
 <% @blogs.each do |blog| %>
   <div class="span-17 colborder">
     <div class="span-12 caps">
@@ -23,9 +24,19 @@
   </div>
 
 <% end %>
- 
-<br />
-<% if user_signed_in? %>
-<%= link_to 'New Blog', new_blog_path %>
-<% end %>
+</div> 
+<div class="span-6 last"> 
 
+  <% if user_signed_in? %>
+    <%= link_to 'New Blog', new_blog_path %>
+    <hr/>
+  <% end %>
+  <br/>
+  <div class="span-6 last"> 
+  <ul>
+  <% @blogs.each do |blog| %>
+    <li><%= link_to blog.title, blog %></li>
+  <% end %>
+  </ul>
+  </div>
+</div>
