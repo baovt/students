@@ -1,0 +1,21 @@
+<div class="span-17 colborder">
+    <div class="span-12 caps">
+      <h1><%= blog.title %></h1>
+    </div>
+    <div class="span-5 last"><%=  show_time(blog.updated_at) %>
+    </div>
+    <div class="span-17 last">By <%= blog.user.email %></div>
+    <div class="span-17 last"> 
+        <p class="quiet">
+          <%= raw blog.content %>
+        </p>
+    </div>
+   <div class="span-17 last"> 
+      <% if user_signed_in? and blog.user.id == current_user.id %>
+        <%= link_to 'Edit', edit_blog_path(blog) %> |
+      <% end %>
+
+      <%= link_to 'Back', blogs_path %>
+   </div>
+   
+</div>

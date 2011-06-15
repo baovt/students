@@ -1,5 +1,8 @@
 Students::Application.routes.draw do
-  resources :blogs
+
+  resources :blogs do
+    resources :responses
+  end
 
   devise_for :users
   scope "/student" do

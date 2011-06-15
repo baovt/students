@@ -1,0 +1,13 @@
+<%= render @blog %>
+<div class="span-17 colborder">
+  <% @blog.responses.each do |response| %>
+    <div class="box">
+      <span class="caps"><%= response.content %></span>
+      <div class="quiet">by <%= response.user.email %></div>
+    </div>
+  <% end %>  
+  <h1>New response</h1>
+  
+  <%= render 'form' %>
+
+</div>

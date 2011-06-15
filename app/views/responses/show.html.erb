@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Content:</b>
+  <%= @response.content %>
+</p>
+
+<p>
+  <b>Blog:</b>
+  <%= @response.blog_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @response.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_blog_response_path(@response.blog, @response) %> |
+<%= link_to 'Back', blog_responses_path %>
