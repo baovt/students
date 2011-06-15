@@ -13,7 +13,7 @@
         </p>
     </div>
    
-    <% if user_signed_in? %>
+    <% if user_signed_in? and blog.user.id == current_user.id  %>
       <div class="span-17 last"> 
           <%= link_to 'Show', blog %>
           <%= link_to 'Edit', edit_blog_path(blog) %>

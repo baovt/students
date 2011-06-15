@@ -11,7 +11,7 @@
         </p>
     </div>
    <div class="span-17 last"> 
-      <% if user_signed_in? %>
+      <% if user_signed_in? and @blog.user.id == current_user.id %>
         <%= link_to 'Edit', edit_blog_path(@blog) %> |
       <% end %>
 
