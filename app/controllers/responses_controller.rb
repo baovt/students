@@ -24,6 +24,7 @@ class ResponsesController < ApplicationController
   # GET /responses/new
   # GET /responses/new.xml
   def new
+    @blogs = Blog.all
     @response = Response.new
     @blog = Blog.find_by_id(params[:blog_id])
     @response.blog = @blog
@@ -36,6 +37,7 @@ class ResponsesController < ApplicationController
 
   # GET /responses/1/edit
   def edit
+    @blogs = Blog.all
     @response = Response.find(params[:id])
     @blog = Blog.find_by_id(params[:blog_id])
   end
@@ -43,11 +45,16 @@ class ResponsesController < ApplicationController
   # POST /responses
   # POST /responses.xml
   def create
+    @blogs = Blog.all   
     @response = Response.new(params[:response])
-
+    @blog = @response.blog
     respond_to do |format|
       if @response.save
-        format.html { redirect_to([@response.blog,@response], :notice => 'Response was successfully created.') }
+        @response = Response.new
+        @response.blog =  @blog
+        @response.user = current_user
+        # format.html { redirect_to([@response.blog,@response], :notice => 'Response was successfully created.') }
+        format.html { render :action => "new" }
         format.xml  { render :xml => @response, :status => :created, :location => @response }
       else
         format.html { render :action => "new" }
@@ -59,11 +66,13 @@ class ResponsesController < ApplicationController
   # PUT /responses/1
   # PUT /responses/1.xml
   def update
+    @blogs = Blog.all  
     @response = Response.find(params[:id])
-
+    @blog = @response.blog
     respond_to do |format|
       if @response.update_attributes(params[:response])
-        format.html { redirect_to([@response.blog,@response], :notice => 'Response was successfully updated.') }
+        # format.html { redirect_to([@response.blog,@response], :notice => 'Response was successfully updated.') }
+        format.html { render :action => "edit" }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

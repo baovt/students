@@ -1,17 +1,8 @@
 <div class="span-17 colborder">
 <% @blogs.each do |blog| %>
-  <div class="span-17 colborder">
-    <div class="span-12 caps">
-      <h1><%= blog.title %></h1>
-    </div>
-    <div class="span-5 last"><%= show_time(blog.updated_at) %>
-    </div>
-    <div class="span-17 last">By <%= blog.user.email %></div>
-    <div class="span-17 last"> 
-        <p class="quiet">
-          <%= raw blog.content %>
-        </p>
-    </div>
+  
+  <div class="span-17 colborder <%= cycle('list_line_even', 'list_line_odd') %>">
+    <%= render blog %>
    
     <% if user_signed_in? and blog.user.id == current_user.id  %>
       <div class="span-17 last"> 
@@ -36,7 +27,7 @@
   <div class="span-6 last"> 
   <ul>
   <% @blogs.each do |blog| %>
-    <li><%= link_to blog.title, blog %></li>
+    <li><%= link_to blog.title, new_blog_response_path(blog) %></li>
   <% end %>
   </ul>
   </div>

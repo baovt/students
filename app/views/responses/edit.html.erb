@@ -1,6 +1,12 @@
-<h1>Editing response</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', [@response.blog, @response] %> |
-<%= link_to 'Back', blog_responses_path %>
+<div class="span-17 colborder">
+  <%= render @blog %>
+  <div class="span-17 last"> 
+    <h1>Editing response</h1>
+    
+    <%= render 'form' %>
+    
+    <%= link_to 'Show', [@response.blog, @response] %> |
+    <%= link_to 'Back', blog_responses_path %>
+  </div>
+</div>
+<%= render 'blogs/nav_blogs' %>

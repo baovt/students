@@ -15,7 +15,7 @@
     <td><%= response.content %></td>
     <td><%= response.blog_id %></td>
     <td><%= response.user_id %></td>
-    <td><%= link_to 'Show', [response.blog, response] %></td>
+    <td><%= link_to 'Show', blog_response_path(response.blog, response) %></td>
     <td><%= link_to 'Edit', edit_blog_response_path(response.blog, response) %></td>
     <td><%= link_to 'Destroy', [response.blog, response], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

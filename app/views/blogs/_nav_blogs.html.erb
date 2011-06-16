@@ -1,0 +1,9 @@
+<div class="span-6 last" > 
+  <ul>
+  <li><%= link_to 'All', blogs_path %></li>
+  <% @blogs.each do |blog| %>
+    <li><%= link_to blog.title, new_blog_response_path(blog) %></li>
+  <% end %>
+  </ul>
+
+</div>

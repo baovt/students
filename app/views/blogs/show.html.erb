@@ -1,9 +1,12 @@
-<%= render @blog %>
+<div class="span-17 colborder">
+    <%= render @blog %>
+   <div class="span-17 last"> 
+      <% if user_signed_in? and @blog.user.id == current_user.id %>
+        <%= link_to 'Edit', edit_blog_path(@blog) %> |
+      <% end %>
 
-<div class="span-6 last"> 
-  <ul>
-  <% @blogs.each do |blog| %>
-    <li><%= link_to blog.title, new_blog_response_path(blog) %></li>
-  <% end %>
-  </ul>
+      <%= link_to 'Back', blogs_path %>
+   </div>
+   
 </div>
+<%= render 'nav_blogs' %>

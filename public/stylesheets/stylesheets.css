@@ -1,8 +1,8 @@
-#blog_list .list_line_even {
+.list_line_even {
   background:   #e0f8f8;
 }
 
-#blog_list .list_line_odd {
+.list_line_odd {
   background:   #f8b0f8;
 }
 
